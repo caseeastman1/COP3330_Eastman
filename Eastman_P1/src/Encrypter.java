@@ -52,6 +52,7 @@ public class Encrypter {
 
 
         System.out.println(d7 + "" + d8 + "" + d5 + "" + d6);
+        System.out.println(d5 + "" + d6 + "" + d7 + "" + d8);
     }
 }
 
