@@ -1,4 +1,4 @@
-public class Shape3D extends Shape2D {
+abstract class Shape3D extends Shape2D {
     public double Area;
     public double Volume;
 
