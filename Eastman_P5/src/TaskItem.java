@@ -24,6 +24,52 @@ public class TaskItem {
         this.isCompleted = false;
     }
 
+    void setTitle(String x) {
+        this.title = x;
+    }
+
+    String getTitle() {
+        return this.title;
+    }
+
+    void setDescription(String y) {
+        this.description = y;
+    }
+
+    String getDescription() {
+        return this.description;
+    }
+
+    void setDate(String z) {
+        this.date = z;
+    }
+
+    String getDate() {
+        return this.date;
+    }
+
+    void setComp(boolean completed) {
+        this.isCompleted = completed;
+    }
+
+    public boolean getComp() {
+        return this.isCompleted;
+    }
+
+    String getCompleted() {
+        if(isCompleted)
+            return"***";
+        return "   ";
+    }
+
+    public TaskItem() {
+        s = "Something";
+    }
+
+    public TaskItem(String s) {
+        this.s = s;
+    }
+
 
 
 
