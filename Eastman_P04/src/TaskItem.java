@@ -1,5 +1,3 @@
-
-
 public class TaskItem {
     private String title;
     private String description;
@@ -67,11 +65,3 @@ public class TaskItem {
     }
 
 }
-
-
-
-
-
-
-
-

@@ -92,13 +92,13 @@ public class TaskList {
 
     public void printCompleted() {
         int number = 0;
-        for (TaskItem i : list) {
-            if (i.getComp()) {
-                System.out.println(i.getCompleted() + " " + number + ") " + "[" + i.getDate() + "] " + i.getTitle() + ": " + i.getDescription());
-            }
-            number++;
+            for (TaskItem i : list) {
+                if (i.getComp()) {
+                    System.out.println(i.getCompleted() + " " + number + ") " + "[" + i.getDate() + "] " + i.getTitle() + ": " + i.getDescription());
+                }
+                number++;
 
-        }
+            }
     }
 
     public void printNonCompleted() {
@@ -185,24 +185,24 @@ public class TaskList {
 
 
             while(s.hasNextLine()) {
-                String[] temp = new String[4];
-                temp = s.nextLine().split("\\t");
-                boolean tempComp = false;
-                if(temp[0].equals("***")) {
-                    tempComp = true;
-                }
-                TaskItem tempTask = new TaskItem(temp[1], temp[2], temp[3], tempComp);
-                list.add(tempTask);
+               String[] temp = new String[4];
+               temp = s.nextLine().split("\\t");
+               boolean tempComp = false;
+               if(temp[0].equals("***")) {
+                   tempComp = true;
+               }
+               TaskItem tempTask = new TaskItem(temp[1], temp[2], temp[3], tempComp);
+               list.add(tempTask);
 
 
             }
 
 
         }
-        catch(IOException e){
-            System.out.println(e.getMessage());
+            catch(IOException e){
+                System.out.println(e.getMessage());
 
-        }
+            }
 
     }
 
@@ -220,7 +220,16 @@ public class TaskList {
 
 
 
+    @Test
+    public void clearClears() {
+        ArrayList<TaskItem> list = new ArrayList<>();
+        TaskItem task = new TaskItem();
+        list.add(task);
+        list.add(task);
+        list.clear();
 
+        assertEquals(0, list.size());
+    }
 
 
 
