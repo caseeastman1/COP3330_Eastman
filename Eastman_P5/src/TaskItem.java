@@ -9,7 +9,6 @@ public class TaskItem {
 
 
 
-
     public TaskItem(String title, String description, String date, boolean isCompleted) {
         this.title = title;
         this.description = description;

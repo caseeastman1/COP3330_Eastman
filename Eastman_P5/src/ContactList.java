@@ -138,13 +138,50 @@ public class ContactList {
 
             FileWriter saver = new FileWriter(file);
             for (ContactItem i : contact) {
-                saver.write(i.getFirstName() + "\\t" + i.getLastName() + "\\t" + i.getPhoneNumber() + "\\t" + i.getEmail() + "\n");
+                saver.write(i.getFirstName() + "\t" + i.getLastName() + "\t" + i.getPhoneNumber() + "\t" + i.getEmail() + "\n");
                 saver.close();
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
+
+
+    public void fileLoadContact() {
+        try {
+            System.out.println("Enter the filename to load: ");
+            String name = input.nextLine();
+
+            Scanner s = new Scanner(new File(name + ".txt"));
+
+            while(s.hasNextLine()){
+                String[] temp = new String[4];
+                temp = s.nextLine().split("\\t");
+                ContactItem tempContact = new ContactItem(temp[0], temp[1], temp[2], temp[3]);
+                contact.add(tempContact);
+            }
+
+        }catch(IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public void clearAll() {
             contact.clear();
@@ -155,6 +192,7 @@ public class ContactList {
 
 
 
+
     }
 
 
@@ -196,4 +234,4 @@ public class ContactList {
 
 
 
-}
+
