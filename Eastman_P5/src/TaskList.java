@@ -19,7 +19,7 @@ public class TaskList {
 
     Scanner input = new Scanner(System.in);
 
-    public void addList(String title, String description, String date, boolean isCompleted) {
+    public void addList(String title, String description, String date, boolean isCompleted) throws Exception {
         TaskItem i = new TaskItem(title, description, date, isCompleted);
 
         int arraySize = 0;
@@ -64,9 +64,8 @@ public class TaskList {
         System.out.println("8) quit to the main menu");
     }
 
-    public void editList(String title, String description, String date, boolean isCompleted, int index) {
+    public void editList(String title, String description, String date, boolean isCompleted, int index) throws Exception {
         TaskItem i = new TaskItem(title, description, date, isCompleted);
-
         list.set(index, i);
     }
 
@@ -173,7 +172,7 @@ public class TaskList {
 
 
 
-    public void fileLoad() {
+    public void fileLoad() throws Exception {
         try{
             System.out.println("Enter the filename to load: ");
 

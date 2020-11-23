@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class ContactApp {
 
-    public void contactApplication() {
+    public void contactApplication() throws Exception {
         ContactList contact = new ContactList();
 
         Scanner input = new Scanner(System.in);
@@ -38,35 +38,37 @@ public class ContactApp {
                             case 2:
                                 String message = "";
 
+
                                 System.out.println("First name: ");
                                 String firstName = input.nextLine();
 
-                                if (!contact.validFirstName(firstName))
-                                    message = ("WARNING: first name must be at least 1 character long; contact not created");
+                                if (!contact.validFirstName(firstName)){
+                                    message = ("WARNING: first name must be at least 1 character long; contact not created\n");
+                                }
 
                                 System.out.println("Last name: ");
-                                String lastName = input.next();
+                                String lastName = input.nextLine();
 
-                                if (!contact.validLastName(lastName))
-                                    message = ("WARNING: last name must be at least 1 character long; contact not created");
+                                if (!contact.validLastName(lastName)){
+                                    message = ("WARNING: last name must be at least 1 character long; contact not created\n");
+                                }
 
                                 System.out.println("Phone number ");
-                                String phoneNumber = input.next();
+                                String phoneNumber = input.nextLine();
 
-                                if (!contact.validPhoneNumber(phoneNumber))
-                                    message = ("WARNING: invalid phone number; contact not created");
+                                if (!contact.validPhoneNumber(phoneNumber)){
+                                    message = ("WARNING: invalid phone number; contact not created\n");
+                               }
 
                                 System.out.println("Email address: ");
-                                String email = input.next();
+                                String email = input.nextLine();
+                                System.out.print(message);
 
                                 if (!contact.validEmail(email))
-                                    message = ("WARNING: invalid email address; contact not created");
+                                    message = ("WARNING: invalid phone number; contact not created\n");
 
-
-                                if (contact.validFirstName(firstName) && contact.validLastName(lastName) && contact.validPhoneNumber(phoneNumber) && contact.validEmail(email))
                                     contact.addContact(firstName, lastName, phoneNumber, email);
 
-                                System.out.print(message);
                                 contact.printOperationContact();
                                 break;
                             case 3:

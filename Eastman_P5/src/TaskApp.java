@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class TaskApp {
 
-    public void TaskApplication(){
+    public void TaskApplication() throws Exception {
 
         TaskList list = new TaskList();
         Scanner input = new Scanner(System.in);

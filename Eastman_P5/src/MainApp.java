@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MainApp {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception {
         ContactApp contact2 = new ContactApp();
         TaskApp list2 = new TaskApp();
 

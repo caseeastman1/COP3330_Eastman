@@ -17,7 +17,7 @@ public class ContactList {
 
     Scanner input = new Scanner(System.in);
 
-    public void addContact(String firstName, String lastName, String phoneNumber, String email) {
+    public void addContact(String firstName, String lastName, String phoneNumber, String email) throws Exception {
         ContactItem i = new ContactItem(firstName, lastName, phoneNumber, email);
         int arraySize = 0;
 
@@ -65,7 +65,7 @@ public class ContactList {
     }
 
 
-    public void editContact(int index, String firstName, String lastName, String phoneNumber, String email){
+    public void editContact(int index, String firstName, String lastName, String phoneNumber, String email) throws Exception {
         ContactItem i = new ContactItem(firstName, lastName, phoneNumber, email);
 
         contact.set(index, i);
@@ -78,7 +78,7 @@ public class ContactList {
     }
 
     public boolean validPhoneNumber(String phoneNumber){
-            final String regexPN = "^(1)?[0-9]{3}?[0-9]{3}-?[0-9]{4}$";
+            final String regexPN = "^\\d{3}-\\d{3}-\\d{4}$";
             if(Pattern.matches(regexPN, phoneNumber))
                 return true;
             else
@@ -92,7 +92,10 @@ public class ContactList {
             count++;
         }
 
-        if(count >= 1)
+
+        final String regexFN = "^(?=.*[A-Z])(?=.*[a-z]).*$";
+
+        if(count >= 1 || Pattern.matches(regexFN, firstName))
             return true;
         else
             return false;
@@ -105,7 +108,13 @@ public class ContactList {
         for(int i = 0; i < lastName.length(); i++){
             count++;
         }
-        if(count >= 1)
+
+        final String regexLN = "^(?=.*[A-Z])(?=.*[a-z]).*$";
+
+
+
+
+        if(count >= 1 || Pattern.matches(regexLN, lastName))
             return true;
         else
             return false;
@@ -119,7 +128,10 @@ public class ContactList {
             count++;
         }
 
-        if(count >= 1)
+        final String regexE = "^([\\w\\.\\-]+)@([\\w\\-]+)((\\.(\\w){2,3})+)$";
+
+
+        if(count >= 1 || Pattern.matches(regexE, email))
             return true;
         else
             return false;
@@ -163,6 +175,8 @@ public class ContactList {
 
         }catch(IOException e){
             System.out.println(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
