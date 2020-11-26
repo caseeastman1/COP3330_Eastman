@@ -180,25 +180,13 @@ public class ContactList {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public void clearAll() {
             contact.clear();
+        }
+
+
+        public int contactSize(){
+            return contact.size();
         }
 
 

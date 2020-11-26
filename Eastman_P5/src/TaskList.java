@@ -35,6 +35,8 @@ public class TaskList {
     public void printList() {
         int number = 0;
 
+
+
         for(TaskItem i : list) {
             System.out.println(i.getCompleted() + " " + number + ") " + "[" + i.getDate() + "] " + i.getTitle() + ": " + i.getDescription());
             number++;
@@ -202,6 +204,9 @@ public class TaskList {
 
     public void clearAll() {
         list.clear();
+    }
+    public int listSize(){
+        return list.size();
     }
 
 

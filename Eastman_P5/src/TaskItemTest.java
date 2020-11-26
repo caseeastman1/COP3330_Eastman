@@ -11,7 +11,7 @@ public class TaskItemTest {
     @Test
     public void constructorFailsWithInvalidTitle(){
         try{
-            TaskItem i = new TaskItem();
+            TaskItem i = new TaskItem("yes", "yes", "1900-01-01");
             i.setTitle("");
             fail();
         }catch(Exception e){
@@ -21,7 +21,7 @@ public class TaskItemTest {
     @Test
     public void constructorFailsWithInvalidDueDate(){
         try{
-            TaskItem i = new TaskItem();
+            TaskItem i = new TaskItem("yes", "yes", "1900-01-01");
             i.setDate("00-00-0000");
             fail();
         }catch(Exception e) {
@@ -32,7 +32,7 @@ public class TaskItemTest {
     @Test
     public void constructorSucceedsWithValidTitle() {
         try{
-            TaskItem i = new TaskItem();
+            TaskItem i = new TaskItem("yes", "yes", "1900-01-01");
             i.setTitle("Test");
         }catch(Exception e){
             fail();
@@ -43,7 +43,7 @@ public class TaskItemTest {
     @Test
     public void constructorSucceedsWithValidDueDate() {
         try{
-            TaskItem i = new TaskItem();
+            TaskItem i = new TaskItem("yes","yes", "1900-01-01");
             i.setDate("1900-01-01");
 
         }catch(Exception e){

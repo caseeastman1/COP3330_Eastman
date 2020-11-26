@@ -102,6 +102,18 @@ public class ContactListTest {
         assertTrue(contact.validEmail("yes@yes.com"));
     }
 
+    @Test
+    public void checksForContact() throws Exception{
+        ArrayList<ContactItem> contact = new ArrayList<>();
+        ContactItem i = new ContactItem("First", "Last", "000-000-0000", "yes@yes.com");
+        String message = "message";
+        contact.add(i);
+        contact.remove(i);
+        if(contact.size() == 0)
+            message = "no contact present";
+        assertEquals("no contact present", message);
+    }
+
 
 
 

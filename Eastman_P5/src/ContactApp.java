@@ -6,8 +6,6 @@ public class ContactApp {
         ContactList contact = new ContactList();
 
         Scanner input = new Scanner(System.in);
-        Scanner input2 = new Scanner(System.in);
-        Scanner input3 = new Scanner(System.in);
 
         while(true){
             contact.printMenu();
@@ -31,7 +29,15 @@ public class ContactApp {
                             case 1:
                                 System.out.println("Current Contacts");
                                 System.out.println("---------");
-                                contact.printContact();
+
+                                if(contact.contactSize() == 0){
+                                    System.out.println("no contacts present");
+                                }
+                                else{
+                                    contact.printContact();
+
+                                }
+
                                 contact.printOperationContact();
                                 break;
 
@@ -130,7 +136,15 @@ public class ContactApp {
                             case 1:
                                 System.out.println("Current Contacts");
                                 System.out.println("---------");
-                                contact.printContact();
+
+                                if(contact.contactSize() == 0){
+                                    System.out.println("no contacts present");
+                                }
+                                else{
+                                    contact.printContact();
+
+                                }
+
                                 contact.printOperationContact();
                                 break;
 

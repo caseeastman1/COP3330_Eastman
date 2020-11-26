@@ -32,8 +32,14 @@ public class TaskApp {
                             case 1:
                                 System.out.println("Current Tasks");
                                 System.out.println("---------\n");
+                                if (list.listSize() == 0){
+                                    System.out.println("No list present");
+                                }
+                                else{
                                 list.printList();
+                            }
                                 list.printOperation();
+
                                 break;
                             case 2:
                                 String message = "";
@@ -156,7 +162,15 @@ public class TaskApp {
                             case 1:
                                 System.out.println("Current Tasks");
                                 System.out.println("---------\n");
+
+                                if (list.listSize() == 0){
+                                System.out.println("No list present");
+                            }
+                                else{
                                 list.printList();
+                            }
+
+
                                 list.printOperation();
                                 break;
                             case 2:

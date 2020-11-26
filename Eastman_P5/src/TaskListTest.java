@@ -11,7 +11,7 @@ public class TaskListTest {
     @Test
     public void clearClears() {
         ArrayList<TaskItem> list = new ArrayList<>();
-        TaskItem task = new TaskItem();
+        TaskItem task = new TaskItem("yes", "yes", "1900-01-01");
         list.add(task);
         list.add(task);
         list.clear();
@@ -23,7 +23,7 @@ public class TaskListTest {
     @Test
     public void addingListIncreasesSize() {
         ArrayList<TaskItem> list = new ArrayList<>();
-        TaskItem task = new TaskItem();
+        TaskItem task = new TaskItem("yes", "yes", "1900-01-01");
 
         list.add(task);
         list.add(task);
@@ -36,7 +36,7 @@ public class TaskListTest {
     @Test
     public void editWorks() {
         ArrayList<TaskItem> list = new ArrayList<>();
-        TaskItem task = new TaskItem();
+        TaskItem task = new TaskItem("yes", "yes", "1900-01-01");
         list.add(task);
         int index = 0;
         list.set(index, task);
@@ -46,7 +46,7 @@ public class TaskListTest {
     @Test
     public void correctListAdd() {
         ArrayList<TaskItem> list = new ArrayList<>();
-        TaskItem task = new TaskItem();
+        TaskItem task = new TaskItem("yes", "yes", "1900-01-01");
         list.add(task);
 
 
@@ -83,10 +83,23 @@ public class TaskListTest {
     @Test
     public void removeListWorks() {
         ArrayList<TaskItem> list = new ArrayList<>();
-        TaskItem task = new TaskItem();
+        TaskItem task = new TaskItem("yes", "yes", "1900-01-01");
         list.add(task);
         list.remove(task);
         assertEquals(0, list.size());
+    }
+
+    @Test
+    public void checkList(){
+        ArrayList<TaskItem> list = new ArrayList<>();
+        TaskItem task = new TaskItem("yes", "yes", "1900-01-01");
+        list.add(task);
+        list.remove(task);
+        String message = "message";
+        if(list.size() == 0){
+            message = "no task present";
+        }
+        assertEquals("no task present", message);
     }
 
 
